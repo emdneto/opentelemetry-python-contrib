@@ -16,6 +16,7 @@ env:
   CORE_REPO_SHA: ${% raw %}{{ inputs.CORE_REPO_SHA }}{% endraw %}
   CONTRIB_REPO_SHA: ${% raw %}{{ inputs.CONTRIB_REPO_SHA }}{% endraw %}
   PIP_EXISTS_ACTION: w
+  CORE_REPO: "git+file://{% raw %}${{ github.workspace }}{% endraw %}/opentelemetry-python"
 
 jobs:
   {%- for job_data in job_datas %}
@@ -48,6 +49,4 @@ jobs:
 
       - name: Run tests
         run: tox -e {{ job_data.tox_env }} -- -ra
-        env:
-          CORE_REPO: "git+file://{% raw %}${{ github.workspace }}{% endraw %}/opentelemetry-python"
   {%- endfor %}

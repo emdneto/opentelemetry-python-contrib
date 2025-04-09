@@ -16,6 +16,7 @@ env:
   CORE_REPO_SHA: ${{ inputs.CORE_REPO_SHA }}
   CONTRIB_REPO_SHA: ${{ inputs.CONTRIB_REPO_SHA }}
   PIP_EXISTS_ACTION: w
+  CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
 jobs:
 
@@ -47,8 +48,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-openai-v2-oldest -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-openai-v2-latest:
     name: instrumentation-openai-v2-latest 
@@ -78,8 +77,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-openai-v2-latest -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-vertexai-oldest:
     name: instrumentation-vertexai-oldest 
@@ -109,8 +106,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-vertexai-oldest -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-vertexai-latest:
     name: instrumentation-vertexai-latest 
@@ -140,8 +135,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-vertexai-latest -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-resource-detector-container:
     name: resource-detector-container 
@@ -171,8 +164,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-resource-detector-container -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-resource-detector-azure-0:
     name: resource-detector-azure-0 
@@ -202,8 +193,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-resource-detector-azure-0 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-resource-detector-azure-1:
     name: resource-detector-azure-1 
@@ -233,8 +222,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-resource-detector-azure-1 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-sdk-extension-aws-0:
     name: sdk-extension-aws-0 
@@ -264,8 +251,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-sdk-extension-aws-0 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-sdk-extension-aws-1:
     name: sdk-extension-aws-1 
@@ -295,8 +280,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-sdk-extension-aws-1 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-distro:
     name: distro 
@@ -326,8 +309,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-distro -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-opentelemetry-instrumentation:
     name: opentelemetry-instrumentation 
@@ -357,8 +338,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-opentelemetry-instrumentation -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-aiohttp-client:
     name: instrumentation-aiohttp-client 
@@ -388,8 +367,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-aiohttp-client -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-aiohttp-server:
     name: instrumentation-aiohttp-server 
@@ -419,8 +396,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-aiohttp-server -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-aiopg:
     name: instrumentation-aiopg 
@@ -450,8 +425,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-aiopg -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-aws-lambda:
     name: instrumentation-aws-lambda 
@@ -481,8 +454,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-aws-lambda -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-botocore-0:
     name: instrumentation-botocore-0 
@@ -512,8 +483,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-botocore-0 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-botocore-1:
     name: instrumentation-botocore-1 
@@ -543,8 +512,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-botocore-1 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-boto3sqs:
     name: instrumentation-boto3sqs 
@@ -574,8 +541,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-boto3sqs -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-django-0:
     name: instrumentation-django-0 
@@ -605,8 +570,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-django-0 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-django-1:
     name: instrumentation-django-1 
@@ -636,8 +599,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-django-1 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-django-2:
     name: instrumentation-django-2 
@@ -667,8 +628,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-django-2 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-dbapi:
     name: instrumentation-dbapi 
@@ -698,8 +657,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-dbapi -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-boto:
     name: instrumentation-boto 
@@ -729,8 +686,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-boto -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-asyncclick:
     name: instrumentation-asyncclick 
@@ -741,6 +696,13 @@ jobs:
         with:
           repository: open-telemetry/opentelemetry-python-contrib
           ref: ${{ env.CONTRIB_REPO_SHA }}
+
+      - name: Checkout core repo @ SHA - ${{ env.CORE_REPO_SHA }}
+        uses: actions/checkout@v4
+        with:
+          repository: open-telemetry/opentelemetry-python
+          ref: ${{ env.CORE_REPO_SHA }}
+          path: opentelemetry-python
 
       - name: Set up Python 3.8
         uses: actions/setup-python@v5
@@ -782,8 +744,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-click -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-elasticsearch-0:
     name: instrumentation-elasticsearch-0 
@@ -813,8 +773,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-elasticsearch-0 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-elasticsearch-1:
     name: instrumentation-elasticsearch-1 
@@ -844,8 +802,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-elasticsearch-1 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-elasticsearch-2:
     name: instrumentation-elasticsearch-2 
@@ -875,8 +831,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-elasticsearch-2 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-falcon-0:
     name: instrumentation-falcon-0 
@@ -906,8 +860,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-falcon-0 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-falcon-1:
     name: instrumentation-falcon-1 
@@ -937,8 +889,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-falcon-1 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-falcon-2:
     name: instrumentation-falcon-2 
@@ -968,8 +918,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-falcon-2 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-falcon-3:
     name: instrumentation-falcon-3 
@@ -999,8 +947,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-falcon-3 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-fastapi:
     name: instrumentation-fastapi 
@@ -1030,8 +976,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-fastapi -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-flask-0:
     name: instrumentation-flask-0 
@@ -1061,8 +1005,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-flask-0 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-flask-1:
     name: instrumentation-flask-1 
@@ -1092,8 +1034,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-flask-1 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-flask-2:
     name: instrumentation-flask-2 
@@ -1123,8 +1063,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-flask-2 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-urllib:
     name: instrumentation-urllib 
@@ -1154,8 +1092,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-urllib -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-urllib3-0:
     name: instrumentation-urllib3-0 
@@ -1185,8 +1121,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-urllib3-0 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-urllib3-1:
     name: instrumentation-urllib3-1 
@@ -1216,8 +1150,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-urllib3-1 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-requests:
     name: instrumentation-requests 
@@ -1247,8 +1179,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-requests -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-starlette-oldest:
     name: instrumentation-starlette-oldest 
@@ -1278,8 +1208,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-starlette-oldest -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-starlette-latest:
     name: instrumentation-starlette-latest 
@@ -1309,8 +1237,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-starlette-latest -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-jinja2:
     name: instrumentation-jinja2 
@@ -1340,8 +1266,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-jinja2 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-logging:
     name: instrumentation-logging 
@@ -1371,8 +1295,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-logging -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-exporter-richconsole:
     name: exporter-richconsole 
@@ -1402,8 +1324,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-exporter-richconsole -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-exporter-prometheus-remote-write:
     name: exporter-prometheus-remote-write 
@@ -1433,8 +1353,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-exporter-prometheus-remote-write -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-mysql-0:
     name: instrumentation-mysql-0 
@@ -1464,8 +1382,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-mysql-0 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-mysql-1:
     name: instrumentation-mysql-1 
@@ -1495,8 +1411,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-mysql-1 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-mysqlclient:
     name: instrumentation-mysqlclient 
@@ -1526,8 +1440,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-mysqlclient -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-psycopg2:
     name: instrumentation-psycopg2 
@@ -1557,8 +1469,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-psycopg2 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-psycopg2-binary:
     name: instrumentation-psycopg2-binary 
@@ -1588,8 +1498,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-psycopg2-binary -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-psycopg:
     name: instrumentation-psycopg 
@@ -1619,8 +1527,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-psycopg -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-pymemcache-0:
     name: instrumentation-pymemcache-0 
@@ -1650,8 +1556,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-pymemcache-0 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-pymemcache-1:
     name: instrumentation-pymemcache-1 
@@ -1681,8 +1585,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-pymemcache-1 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-pymemcache-2:
     name: instrumentation-pymemcache-2 
@@ -1712,8 +1614,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-pymemcache-2 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-pymemcache-3:
     name: instrumentation-pymemcache-3 
@@ -1743,8 +1643,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-pymemcache-3 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-pymemcache-4:
     name: instrumentation-pymemcache-4 
@@ -1774,8 +1672,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-pymemcache-4 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-pymongo:
     name: instrumentation-pymongo 
@@ -1805,8 +1701,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-pymongo -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-pymysql:
     name: instrumentation-pymysql 
@@ -1836,8 +1730,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-pymysql -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-pymssql:
     name: instrumentation-pymssql 
@@ -1867,8 +1759,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-pymssql -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-pyramid:
     name: instrumentation-pyramid 
@@ -1898,8 +1788,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-pyramid -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-asgi:
     name: instrumentation-asgi 
@@ -1929,8 +1817,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-asgi -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-asyncpg:
     name: instrumentation-asyncpg 
@@ -1960,8 +1846,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-asyncpg -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-sqlite3:
     name: instrumentation-sqlite3 
@@ -1991,8 +1875,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-sqlite3 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-wsgi:
     name: instrumentation-wsgi 
@@ -2022,8 +1904,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-wsgi -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-grpc-0:
     name: instrumentation-grpc-0 
@@ -2053,8 +1933,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-grpc-0 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-grpc-1:
     name: instrumentation-grpc-1 
@@ -2084,8 +1962,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-grpc-1 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-sqlalchemy-1:
     name: instrumentation-sqlalchemy-1 
@@ -2115,8 +1991,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-sqlalchemy-1 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-sqlalchemy-2:
     name: instrumentation-sqlalchemy-2 
@@ -2146,8 +2020,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-sqlalchemy-2 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-redis:
     name: instrumentation-redis 
@@ -2177,8 +2049,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-redis -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-remoulade:
     name: instrumentation-remoulade 
@@ -2208,8 +2078,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-remoulade -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-celery:
     name: instrumentation-celery 
@@ -2239,8 +2107,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-celery -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-system-metrics:
     name: instrumentation-system-metrics 
@@ -2270,8 +2136,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-system-metrics -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-threading:
     name: instrumentation-threading 
@@ -2301,8 +2165,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-threading -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-tornado:
     name: instrumentation-tornado 
@@ -2332,8 +2194,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-tornado -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-tortoiseorm:
     name: instrumentation-tortoiseorm 
@@ -2363,8 +2223,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-tortoiseorm -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-httpx-0:
     name: instrumentation-httpx-0 
@@ -2394,8 +2252,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-httpx-0 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-httpx-1:
     name: instrumentation-httpx-1 
@@ -2425,8 +2281,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-httpx-1 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-util-http:
     name: util-http 
@@ -2456,8 +2310,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-util-http -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-propagator-aws-xray-0:
     name: propagator-aws-xray-0 
@@ -2487,8 +2339,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-propagator-aws-xray-0 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-propagator-aws-xray-1:
     name: propagator-aws-xray-1 
@@ -2518,8 +2368,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-propagator-aws-xray-1 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-propagator-ot-trace:
     name: propagator-ot-trace 
@@ -2549,8 +2397,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-propagator-ot-trace -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-sio-pika-0:
     name: instrumentation-sio-pika-0 
@@ -2580,8 +2426,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-sio-pika-0 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-sio-pika-1:
     name: instrumentation-sio-pika-1 
@@ -2611,8 +2455,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-sio-pika-1 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-aio-pika-0:
     name: instrumentation-aio-pika-0 
@@ -2642,8 +2484,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-aio-pika-0 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-aio-pika-1:
     name: instrumentation-aio-pika-1 
@@ -2673,8 +2513,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-aio-pika-1 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-aio-pika-2:
     name: instrumentation-aio-pika-2 
@@ -2704,8 +2542,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-aio-pika-2 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-aio-pika-3:
     name: instrumentation-aio-pika-3 
@@ -2735,8 +2571,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-aio-pika-3 -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-aiokafka:
     name: instrumentation-aiokafka 
@@ -2766,8 +2600,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-aiokafka -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-kafka-python:
     name: instrumentation-kafka-python 
@@ -2797,8 +2629,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-kafka-python -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-kafka-pythonng:
     name: instrumentation-kafka-pythonng 
@@ -2828,8 +2658,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-kafka-pythonng -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-confluent-kafka:
     name: instrumentation-confluent-kafka 
@@ -2859,8 +2687,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-confluent-kafka -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-asyncio:
     name: instrumentation-asyncio 
@@ -2890,8 +2716,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-asyncio -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-instrumentation-cassandra:
     name: instrumentation-cassandra 
@@ -2921,8 +2745,6 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-instrumentation-cassandra -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
 
   py38-test-processor-baggage:
     name: processor-baggage 
@@ -2952,5 +2774,3 @@ jobs:
 
       - name: Run tests
         run: tox -e py38-test-processor-baggage -- -ra
-        env:
-          CORE_REPO: "git+file://${{ github.workspace }}/opentelemetry-python"
