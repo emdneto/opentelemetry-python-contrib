@@ -4,6 +4,10 @@
     'config:best-practices',
     'helpers:pinGitHubActionDigestsToSemver',
   ],
+  ignorePaths: [
+    '*requirements.txt',
+    '**/*requirements*.txt',
+  ],
   labels: [
     'dependencies'
   ]
