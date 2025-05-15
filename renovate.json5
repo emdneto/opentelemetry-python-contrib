@@ -5,4 +5,10 @@
     "helpers:pinGitHubActionDigestsToSemver",
     "security:only-security-updates"
   ]
+  "packageRules": [
+    {
+      "matchManagers": ["pip_requirements"],
+      "enabled": false
+    }
+  ]
 }
