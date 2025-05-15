@@ -33,7 +33,7 @@ dependencies = [
 
 [project.optional-dependencies]
 instruments = [
-  "mysql-connector-python >= 8.0, < 10.0",
+  "mysql-connector-python >=9.1.0, <10.0",
 ]
 
 [project.entry-points.opentelemetry_instrumentor]
