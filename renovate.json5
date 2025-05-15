@@ -4,8 +4,14 @@
     "config:best-practices",
     "helpers:pinGitHubActionDigestsToSemver"
   ],
-  "ignorePaths": [
-    "instrumentation/**"
+  "packageRules": [
+    {
+      "matchManagers": ["pip_requirements"],
+      "matchFileNames": ["**/*requirements*.txt"],
+      "enabled": false,
+      "groupName": "pip dependencies",
+      "groupSlug": "pip"
+    },
   ],
   "labels": [
     "dependencies"
