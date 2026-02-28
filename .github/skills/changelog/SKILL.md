@@ -4,7 +4,14 @@ description: A skill for generating changelog entries for OpenTelemetry Python C
 ---
 
 # OpenTelemetry Python Contrib — Changelog Skill
-This skill generates changelog entries for OpenTelemetry Python Contrib packages based on commit messages and pull request descriptions. It follows the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) format and categorizes changes into sections: Added, Fixed or Breaking changes
+
+This skill generates changelog entries for OpenTelemetry Python Contrib packages based on commit messages and pull request descriptions. It follows the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) format and categorizes changes into sections: Added, Fixed or Breaking changes. Just Add/Update/Remove the entry from the ./CHANGELOG.md file at the root of the repository.
+
+# Important
+
+- Do not run any test or lint
+- Do not run any task other than just update the CHANGELOG.md file accordingly to the request
+- Do not search for failures in jobs
 
 ## Usage
 
@@ -19,5 +26,6 @@ A changelog entry format should look like this:
 - Add Python 3.14 support
   ([#<PR_NUMBER>](https://github.com/open-telemetry/opentelemetry-python-contrib/pull/<PR_NUMBER>))
 ```
+
 
 
